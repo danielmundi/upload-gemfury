@@ -1,0 +1,23 @@
+name: Upload package GemFury
+description: Upload a package to GemFury
+branding:
+  icon: package
+inputs:
+  package-name:
+    description: Name of the package to upload
+    required: true
+  gemfury-username:
+    description: The username to use on GemFury
+    required: true
+  gemfury-token:
+    description: The Token with push access
+    required: true
+runs:
+  using: composite
+  steps:
+    - run: ${{ github.action_path }}/push.sh
+      shell: bash
+      env:
+        PACKAGE_NAME: ${{ inputs.package-name }}
+        GEMFURY_NAME: ${{ inputs.gemfury-username }}
+        GEMFURY_TOKEN: ${{ inputs.gemfury-token }}
