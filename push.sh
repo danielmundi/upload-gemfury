@@ -2,7 +2,7 @@
 
 set -e
 
-if [ -z "${GEMGURY_NAME}" ] || [ -z "${GEMGURY_TOKEN}" ] || [ -z "${PACKAGE_NAME}" ]; then
+if [ -z "${GEMFURY_NAME}" ] || [ -z "${GEMFURY_TOKEN}" ] || [ -z "${PACKAGE_NAME}" ]; then
     echo "Username or access token not provided, make sure you add that to project's env variables."
     exit 1
 fi
